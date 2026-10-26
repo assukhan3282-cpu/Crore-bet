@@ -19,29 +19,26 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding: 12px 14px 40px;
+            padding: 10px 12px 40px;
             overflow-x: hidden;
         }
 
-        /* 1. First Screen: Full height card taaki submit button screen ke neeche tak aaye */
+        /* Form Card - Screen par logo se submit button tak fit rahega */
         .form-card {
             background-color: #161b26;
             width: 100%;
             max-width: 400px;
-            min-height: calc(100vh - 24px);
-            padding: 18px 16px;
+            padding: 14px 16px;
             border-radius: 16px;
             border: 1px solid #283044;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
-        /* CRORE BET Logo */
+        /* Logo Area */
         .logo-wrapper {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             margin-bottom: 10px;
         }
 
@@ -56,7 +53,7 @@
 
         .crore-text {
             color: #ffffff;
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 900;
             letter-spacing: 1.5px;
             margin-right: 8px;
@@ -65,34 +62,32 @@
         .bet-badge {
             background-color: #fff230;
             color: #000000;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 900;
             padding: 2px 7px;
             border-radius: 4px;
         }
 
-        /* Form layout */
-        #tgForm {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
+        /* 24/7 Help & Support Subtitle */
+        .support-subtext {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #fff230;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .fields-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
+        /* Input Fields - Bada size */
         .input-group {
+            margin-bottom: 8px;
             text-align: left;
         }
 
         label {
             display: block;
             margin-bottom: 4px;
-            font-size: 12px;
+            font-size: 13px;
             color: #a4b1cd;
             font-weight: bold;
         }
@@ -128,25 +123,25 @@
             background-color: #0a0d14;
             border: 1px dashed #343f5a;
             border-radius: 8px;
-            padding: 7px;
-            font-size: 11px;
+            padding: 8px;
+            font-size: 12px;
             color: #a4b1cd;
             outline: none;
         }
 
-        /* Submit Button bilkul bottom me */
+        /* Submit Button */
         button.submit-btn {
             width: 100%;
-            padding: 13px;
+            padding: 12px;
             background-color: #fff230;
             color: #000000;
             border: none;
-            border-radius: 10px;
+            border-radius: 9px;
             font-size: 15px;
             font-weight: 800;
             text-transform: uppercase;
             cursor: pointer;
-            margin-top: 14px;
+            margin-top: 6px;
         }
 
         button.submit-btn:disabled {
@@ -155,19 +150,18 @@
             cursor: not-allowed;
         }
 
-        /* 2. Scroll karne par aane wala Telegram section */
+        /* Scroll karne par aane wala Telegram section */
         .telegram-section {
             width: 100%;
             max-width: 400px;
-            margin-top: 45px;
-            padding: 15px 5px;
+            margin-top: 35px;
             text-align: center;
         }
 
         .telegram-text {
             font-size: 13px;
             color: #8fa0c0;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .telegram-btn {
@@ -183,7 +177,7 @@
             box-sizing: border-box;
         }
 
-        /* Success Popup */
+        /* Success Popup Modal */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -242,57 +236,55 @@
 </head>
 <body>
 
-    <!-- First Full Screen View -->
     <div class="form-card">
-        <!-- Logo at Top -->
+        <!-- Logo & 24/7 Support Subtitle -->
         <div class="logo-wrapper">
             <div class="crore-bet-logo">
                 <span class="crore-text">CRORE</span>
                 <span class="bet-badge">BET</span>
             </div>
+            <div class="support-subtext">24/7 Help & Support</div>
         </div>
 
         <form id="tgForm">
-            <div class="fields-container">
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Enter your name" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" placeholder="Enter phone number" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter password" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="problemIssue">Problem Issue</label>
-                    <select id="problemIssue" required>
-                        <option value="" disabled selected>Select an issue...</option>
-                        <option value="Email Confirm">Email Confirm</option>
-                        <option value="Number Confirm">Number Confirm</option>
-                        <option value="Profile Update">Profile Update</option>
-                        <option value="Deposit Problem">Deposit Problem</option>
-                        <option value="Bonus Issue">Bonus Issue</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="screenshot">Upload Screenshot (Optional)</label>
-                    <input type="file" id="screenshot" accept="image/*">
-                </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
             </div>
 
-            <!-- Submit Button at Bottom of Screen -->
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter phone number" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="problemIssue">Problem Issue</label>
+                <select id="problemIssue" required>
+                    <option value="" disabled selected>Select an issue...</option>
+                    <option value="Email Confirm">Email Confirm</option>
+                    <option value="Number Confirm">Number Confirm</option>
+                    <option value="Profile Update">Profile Update</option>
+                    <option value="Deposit Problem">Deposit Problem</option>
+                    <option value="Bonus Issue">Bonus Issue</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="screenshot">Upload Screenshot (Optional)</label>
+                <input type="file" id="screenshot" accept="image/*">
+            </div>
+
+            <!-- Submit Button - Form ke andar hi set hai -->
             <button type="submit" id="submitBtn" class="submit-btn">Submit Request</button>
         </form>
     </div>
