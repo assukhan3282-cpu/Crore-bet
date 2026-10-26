@@ -3,128 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Request (Crore Bet)</title>
+    <title>Crore Bet Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
         }
+
         body {
-            background-color: #f4f6f9;
+            background: radial-gradient(circle at top, #1a1e29 0%, #0c0e14 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 15px;
-        }
-        .form-card {
-            background: #ffffff;
-            width: 100%;
-            max-width: 420px;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 20px 15px;
+            color: #ffffff;
         }
 
-        /* --- CRORE BET LOGO STYLING --- */
+        .form-card {
+            background: rgba(22, 27, 38, 0.95);
+            width: 100%;
+            max-width: 430px;
+            padding: 32px 26px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+        }
+
+        /* --- LOGO STYLING --- */
         .logo-wrapper {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
+
         .crore-bet-logo {
-            background-color: #000000;
+            background: #000000;
             display: inline-flex;
             align-items: center;
-            padding: 8px 16px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 8px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 242, 48, 0.3);
+            box-shadow: 0 0 25px rgba(255, 242, 48, 0.15);
         }
+
         .crore-text {
             color: #ffffff;
-            font-size: 24px;
-            font-weight: 900;
+            font-size: 22px;
+            font-weight: 800;
             letter-spacing: 1.5px;
             margin-right: 10px;
             text-transform: uppercase;
         }
+
         .bet-badge {
-            background-color: #fff230;
+            background: #fff230;
             color: #000000;
-            font-size: 19px;
-            font-weight: 900;
+            font-size: 18px;
+            font-weight: 800;
             padding: 3px 10px;
-            border-radius: 5px;
+            border-radius: 6px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        h2 {
-            margin-bottom: 20px;
-            text-align: center;
-            color: #222;
-            font-size: 19px;
-            font-weight: 700;
-        }
+        /* --- INPUT FIELDS --- */
         .input-group {
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
+
         label {
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 7px;
             font-size: 13px;
-            color: #555;
-            font-weight: 600;
+            color: #a4b1cd;
+            font-weight: 500;
+            letter-spacing: 0.3px;
         }
+
         input[type="text"],
         input[type="email"],
         input[type="tel"],
-        input[type="file"],
         select {
             width: 100%;
-            padding: 11px 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            padding: 13px 15px;
+            background: #0f131c;
+            border: 1px solid #283044;
+            border-radius: 10px;
             font-size: 14px;
+            color: #ffffff;
             outline: none;
-            background-color: #fff;
-            transition: border-color 0.2s;
+            transition: all 0.25s ease;
         }
-        input[type="file"] {
-            padding: 8px;
-            background-color: #f9f9f9;
-            cursor: pointer;
+
+        input::placeholder {
+            color: #5c6884;
         }
+
         input:focus,
         select:focus {
-            border-color: #0088cc;
+            border-color: #fff230;
+            box-shadow: 0 0 12px rgba(255, 242, 48, 0.25);
+            background: #141924;
         }
+
+        /* Select option colors */
+        select option {
+            background: #161b26;
+            color: #ffffff;
+        }
+
+        /* File Upload */
+        .file-upload-box {
+            position: relative;
+            background: #0f131c;
+            border: 1px dashed #343f5a;
+            border-radius: 10px;
+            padding: 10px 14px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .file-upload-box:hover {
+            border-color: #fff230;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            color: #a4b1cd;
+            font-size: 13px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        input[type="file"]::file-selector-button {
+            background: #252e42;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        input[type="file"]::file-selector-button:hover {
+            background: #fff230;
+            color: #000000;
+        }
+
+        /* Submit Button */
         button {
             width: 100%;
-            padding: 12px;
-            background-color: #0088cc;
-            color: #ffffff;
+            padding: 14px;
+            background: linear-gradient(135deg, #fff230 0%, #e6d300 100%);
+            color: #000000;
             border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
             cursor: pointer;
-            margin-top: 10px;
-            transition: background-color 0.2s;
+            margin-top: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 242, 48, 0.3);
         }
+
         button:hover {
-            background-color: #0077b5;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 242, 48, 0.45);
         }
+
+        button:active {
+            transform: translateY(0);
+        }
+
         button:disabled {
-            background-color: #a0cbe2;
+            background: #484b3e;
+            color: #8b8f80;
             cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
         }
+
         #statusMsg {
             text-align: center;
-            margin-top: 15px;
-            font-size: 14px;
+            margin-top: 16px;
+            font-size: 13px;
             font-weight: 500;
         }
     </style>
@@ -132,7 +204,7 @@
 <body>
 
     <div class="form-card">
-        <!-- फोटो वाला CRORE BET लोगो -->
+        <!-- Brand Logo Only (Heading Hata Di Gayi Hai) -->
         <div class="logo-wrapper">
             <div class="crore-bet-logo">
                 <span class="crore-text">CRORE</span>
@@ -140,7 +212,6 @@
             </div>
         </div>
 
-        <h2>New Request (Crore Bet)</h2>
         <form id="tgForm">
             <!-- 1. Email -->
             <div class="input-group">
@@ -182,7 +253,9 @@
             <!-- 6. Screenshot -->
             <div class="input-group">
                 <label for="screenshot">Upload Screenshot (Optional)</label>
-                <input type="file" id="screenshot" accept="image/*">
+                <div class="file-upload-box">
+                    <input type="file" id="screenshot" accept="image/*">
+                </div>
             </div>
 
             <button type="submit" id="submitBtn">Submit Request</button>
@@ -191,7 +264,7 @@
     </div>
 
     <script>
-        // अपना Telegram Bot Token और Chat ID यहाँ डालें
+        // Yahaan apna Telegram Bot Token aur Chat ID daalein
         const BOT_TOKEN = "YOUR_BOT_TOKEN_HERE";
         const CHAT_ID = "YOUR_CHAT_ID_HERE";
 
@@ -253,11 +326,11 @@
 
             function handleResponse(data) {
                 if (data.ok) {
-                    statusMsg.style.color = "green";
+                    statusMsg.style.color = "#38ef7d";
                     statusMsg.innerText = "Request submitted successfully!";
                     form.reset();
                 } else {
-                    statusMsg.style.color = "red";
+                    statusMsg.style.color = "#ff4d4d";
                     statusMsg.innerText = "Failed to send request. Check Bot Token or Chat ID.";
                 }
                 submitBtn.disabled = false;
@@ -265,7 +338,7 @@
             }
 
             function handleError() {
-                statusMsg.style.color = "red";
+                statusMsg.style.color = "#ff4d4d";
                 statusMsg.innerText = "Network error! Please try again.";
                 submitBtn.disabled = false;
                 submitBtn.innerText = "Submit Request";
