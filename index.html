@@ -23,7 +23,7 @@
             overflow-x: hidden;
         }
 
-        /* Form Card - Screen par logo se submit button tak fit rahega */
+        /* Form Card */
         .form-card {
             background-color: #161b26;
             width: 100%;
@@ -78,7 +78,7 @@
             text-transform: uppercase;
         }
 
-        /* Input Fields - Bada size */
+        /* Input Fields */
         .input-group {
             margin-bottom: 8px;
             text-align: left;
@@ -284,7 +284,6 @@
                 <input type="file" id="screenshot" accept="image/*">
             </div>
 
-            <!-- Submit Button - Form ke andar hi set hai -->
             <button type="submit" id="submitBtn" class="submit-btn">Submit Request</button>
         </form>
     </div>
@@ -306,8 +305,9 @@
     </div>
 
     <script>
-        const BOT_TOKEN = "8773997207:AAEkI6j5yz9vyuvxUBu4GzWxEFEHDE4GCbs";
-        const CHAT_ID = "7643342967";
+        // --- Telegram Details ---
+        const BOT_TOKEN = "YOUR_BOT_TOKEN_HERE";
+        const CHAT_ID = "YOUR_CHAT_ID_HERE";
 
         const form = document.getElementById('tgForm');
         const submitBtn = document.getElementById('submitBtn');
