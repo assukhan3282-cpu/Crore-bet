@@ -13,7 +13,6 @@
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        /* ================= ROOT / THEME ================= */
         :root {
             --gold: #fff230;
             --gold-deep: #e6d300;
@@ -24,9 +23,10 @@
             --text-muted: #8b96b0;
             --input-bg: rgba(10, 12, 19, 0.75);
             --input-border: rgba(255, 255, 255, 0.09);
+            --success: #38ef7d;
+            --error: #ff4d4d;
         }
 
-        /* ================= BODY ================= */
         body {
             background: #07080c;
             display: flex;
@@ -39,7 +39,6 @@
             overflow-x: hidden;
         }
 
-        /* Ambient glows behind card */
         body::before,
         body::after {
             content: '';
@@ -71,10 +70,6 @@
             100% { transform: translate(40px, 30px) scale(1.12); }
         }
 
-        /* Subtle grid overlay */
-        body::after { /* re-using ::after for glow; grid on .form-card wrapper */ }
-
-        /* ================= CARD ================= */
         .form-card {
             position: relative;
             z-index: 1;
@@ -95,7 +90,6 @@
             animation: cardIn 0.7s cubic-bezier(0.2, 0.9, 0.3, 1) both;
         }
 
-        /* Premium gold top-edge accent */
         .form-card::before {
             content: '';
             position: absolute;
@@ -115,7 +109,6 @@
             to   { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* ================= LOGO ================= */
         .logo-wrapper {
             display: flex;
             justify-content: center;
@@ -177,7 +170,6 @@
             box-shadow: 0 0 18px rgba(255, 242, 48, 0.35);
         }
 
-        /* ================= TAGLINE ================= */
         .tagline {
             text-align: center;
             font-size: 12.5px;
@@ -192,7 +184,6 @@
             font-weight: 600;
         }
 
-        /* ================= FORM FIELDS ================= */
         .input-group {
             margin-bottom: 16px;
             animation: fieldIn 0.55s cubic-bezier(0.2, 0.9, 0.3, 1) both;
@@ -203,6 +194,8 @@
         .input-group:nth-child(4) { animation-delay: 0.20s; }
         .input-group:nth-child(5) { animation-delay: 0.25s; }
         .input-group:nth-child(6) { animation-delay: 0.30s; }
+        .input-group:nth-child(7) { animation-delay: 0.35s; }
+        .input-group:nth-child(8) { animation-delay: 0.40s; }
 
         @keyframes fieldIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -271,7 +264,6 @@
             color: #ffffff;
         }
 
-        /* ================= FILE UPLOAD ================= */
         .file-upload-box {
             position: relative;
             background: var(--input-bg);
@@ -318,7 +310,6 @@
             box-shadow: 0 0 16px rgba(255, 242, 48, 0.35);
         }
 
-        /* ================= SUBMIT BUTTON ================= */
         button {
             position: relative;
             width: 100%;
@@ -381,7 +372,6 @@
             display: none;
         }
 
-        /* ================= STATUS MESSAGE ================= */
         #statusMsg {
             text-align: center;
             margin-top: 18px;
@@ -392,7 +382,225 @@
             transition: all 0.3s ease;
         }
 
-        /* ================= RESPONSIVE ================= */
+        /* ============================================================ */
+        /* ===============  PREMIUM POPUP ANIMATION  ================= */
+        /* ============================================================ */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 5, 8, 0.72);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 24px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-box {
+            position: relative;
+            background:
+                linear-gradient(160deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 45%),
+                #12151f;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 24px;
+            padding: 40px 30px 32px;
+            width: 100%;
+            max-width: 360px;
+            text-align: center;
+            box-shadow:
+                0 40px 90px rgba(0, 0, 0, 0.85),
+                0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+            transform: scale(0.7) translateY(40px);
+            opacity: 0;
+            transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        opacity 0.4s ease;
+        }
+
+        .popup-overlay.active .popup-box {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+
+        /* Gold / green top accent */
+        .popup-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 58%;
+            height: 2px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            filter: drop-shadow(0 0 8px rgba(255, 242, 48, 0.9));
+        }
+
+        /* Icon circle */
+        .popup-icon {
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .popup-icon.success {
+            background: radial-gradient(circle at 30% 25%, #4dff9e, #16c25a);
+            box-shadow:
+                0 0 0 8px rgba(56, 239, 125, 0.10),
+                0 0 40px rgba(56, 239, 125, 0.55);
+        }
+
+        .popup-icon.error {
+            background: radial-gradient(circle at 30% 25%, #ff7a7a, #d62828);
+            box-shadow:
+                0 0 0 8px rgba(255, 77, 77, 0.10),
+                0 0 40px rgba(255, 77, 77, 0.55);
+        }
+
+        .popup-icon svg {
+            width: 42px;
+            height: 42px;
+            stroke: #ffffff;
+            stroke-width: 3;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0;
+            transform: scale(0.4);
+            animation: none;
+        }
+
+        .popup-overlay.active .popup-icon svg {
+            animation: iconPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s forwards;
+        }
+
+        @keyframes iconPop {
+            from { opacity: 0; transform: scale(0.4) rotate(-25deg); }
+            to   { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+
+        /* Expanding ripple ring */
+        .popup-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            opacity: 0;
+        }
+
+        .popup-overlay.active .popup-icon::after {
+            animation: ripple 1.1s ease-out 0.3s;
+        }
+
+        @keyframes ripple {
+            0%   { opacity: 0.7; transform: scale(1); }
+            100% { opacity: 0; transform: scale(1.9); }
+        }
+
+        .popup-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .popup-overlay.active .popup-title {
+            animation: fadeUp 0.45s ease 0.45s forwards;
+        }
+
+        .popup-text {
+            font-size: 14px;
+            line-height: 1.55;
+            color: var(--text-muted);
+            margin-bottom: 26px;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .popup-overlay.active .popup-text {
+            animation: fadeUp 0.45s ease 0.55s forwards;
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .popup-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #fff230, #e6d300);
+            color: #000;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 8px 22px rgba(255, 242, 48, 0.30);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .popup-overlay.active .popup-btn {
+            animation: fadeUp 0.45s ease 0.65s forwards;
+        }
+
+        .popup-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(255, 242, 48, 0.5);
+        }
+
+        .popup-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        /* Confetti-ish particles for success */
+        .popup-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            border-radius: 24px;
+            pointer-events: none;
+        }
+
+        .popup-particles span {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        .popup-overlay.active .popup-particles span {
+            animation: burst 1.1s ease-out forwards;
+        }
+
+        @keyframes burst {
+            0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+            100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0.2); }
+        }
+
         @media (max-width: 460px) {
             .form-card {
                 padding: 30px 22px 26px;
@@ -402,6 +610,7 @@
             .bet-badge { font-size: 17px; }
             label { font-size: 11px; }
             input, select { padding: 13px 14px; }
+            .popup-box { padding: 34px 24px 28px; }
         }
     </style>
 </head>
@@ -438,6 +647,12 @@
                 <input type="text" id="userId" placeholder="Enter your user ID" required>
             </div>
 
+            <!-- ✅ NEW: Telegram Username / ID -->
+            <div class="input-group">
+                <label for="telegramId">Telegram Username / ID</label>
+                <input type="text" id="telegramId" placeholder="@yourusername or 123456789" required>
+            </div>
+
             <div class="input-group">
                 <label for="problemIssue">Problem Issue</label>
                 <select id="problemIssue" required>
@@ -462,6 +677,24 @@
         </form>
     </div>
 
+    <!-- ================= POPUP ================= -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-box" id="popupBox">
+            <div class="popup-particles" id="particles"></div>
+
+            <div class="popup-icon success" id="popupIcon">
+                <svg viewBox="0 0 24 24" id="popupIconSvg">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+
+            <h2 class="popup-title" id="popupTitle">Success!</h2>
+            <p class="popup-text" id="popupText">Your request has been submitted successfully. Our team will contact you soon.</p>
+
+            <button class="popup-btn" id="popupBtn">Awesome!</button>
+        </div>
+    </div>
+
     <script>
         // ------------------------------------------------------------------
         // ⚠️ REPLACE WITH YOUR OWN TELEGRAM BOT TOKEN & CHAT ID
@@ -473,6 +706,70 @@
         const submitBtn = document.getElementById('submitBtn');
         const statusMsg = document.getElementById('statusMsg');
 
+        // Popup elements
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupIcon    = document.getElementById('popupIcon');
+        const popupIconSvg = document.getElementById('popupIconSvg');
+        const popupTitle   = document.getElementById('popupTitle');
+        const popupText    = document.getElementById('popupText');
+        const popupBtn     = document.getElementById('popupBtn');
+        const particlesBox = document.getElementById('particles');
+
+        // ---------- Popup helpers ----------
+        const CHECK_SVG  = '<polyline points="20 6 9 17 4 12"></polyline>';
+        const CROSS_SVG  = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
+
+        function spawnParticles() {
+            particlesBox.innerHTML = '';
+            const colors = ['#fff230', '#38ef7d', '#ffd700', '#4dff9e', '#ffffff'];
+            for (let i = 0; i < 16; i++) {
+                const span = document.createElement('span');
+                const angle = (Math.PI * 2 * i) / 16;
+                const dist = 90 + Math.random() * 70;
+                span.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
+                span.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
+                span.style.left = '50%';
+                span.style.top = '50%';
+                span.style.background = colors[i % colors.length];
+                span.style.boxShadow = `0 0 10px ${colors[i % colors.length]}`;
+                span.style.animationDelay = (0.35 + Math.random() * 0.15) + 's';
+                particlesBox.appendChild(span);
+            }
+        }
+
+        function showPopup(type, title, text) {
+            // Reset animation by removing class
+            popupOverlay.classList.remove('active');
+
+            // Set visuals
+            if (type === 'success') {
+                popupIcon.className = 'popup-icon success';
+                popupIconSvg.innerHTML = CHECK_SVG;
+                spawnParticles();
+            } else {
+                popupIcon.className = 'popup-icon error';
+                popupIconSvg.innerHTML = CROSS_SVG;
+                particlesBox.innerHTML = '';
+            }
+
+            popupTitle.textContent = title;
+            popupText.textContent = text;
+
+            // Trigger reflow then add active for fresh animations
+            void popupOverlay.offsetWidth;
+            setTimeout(() => popupOverlay.classList.add('active'), 10);
+        }
+
+        function hidePopup() {
+            popupOverlay.classList.remove('active');
+        }
+
+        popupBtn.addEventListener('click', hidePopup);
+        popupOverlay.addEventListener('click', function (e) {
+            if (e.target === popupOverlay) hidePopup();
+        });
+
+        // ---------- Form submit ----------
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -484,6 +781,7 @@
             const name         = document.getElementById('name').value.trim();
             const phone        = document.getElementById('phone').value.trim();
             const userId       = document.getElementById('userId').value.trim();
+            const telegramId   = document.getElementById('telegramId').value.trim();
             const problemIssue = document.getElementById('problemIssue').value;
             const fileInput    = document.getElementById('screenshot');
             const file         = fileInput.files[0];
@@ -493,6 +791,7 @@
                                 `👤 *Name:* ${name}\n` +
                                 `📞 *Phone:* ${phone}\n` +
                                 `🆔 *User ID:* ${userId}\n` +
+                                `✈️ *Telegram:* ${telegramId}\n` +
                                 `⚠️ *Problem Issue:* ${problemIssue}`;
 
             function sendPhoto() {
@@ -526,16 +825,31 @@
                 .then(res => res.json())
                 .then(data => {
                     if (data.ok) {
+                        showPopup(
+                            'success',
+                            'Request Submitted!',
+                            'Your request has been sent successfully. Our support team will reach out to you shortly.'
+                        );
                         statusMsg.style.color = "#38ef7d";
                         statusMsg.innerText = "✅ Request submitted successfully!";
                         form.reset();
                     } else {
+                        showPopup(
+                            'error',
+                            'Submission Failed',
+                            'We couldn’t send your request. Please check the bot configuration and try again.'
+                        );
                         statusMsg.style.color = "#ff4d4d";
                         statusMsg.innerText = "❌ Failed to send. Check Bot Token / Chat ID.";
                         console.warn("Telegram API error:", data);
                     }
                 })
                 .catch(err => {
+                    showPopup(
+                        'error',
+                        'Network Error',
+                        'Something went wrong with the connection. Please check your internet and try again.'
+                    );
                     statusMsg.style.color = "#ff4d4d";
                     statusMsg.innerText = "⚠️ Network error! Please try again.";
                     console.error("Fetch error:", err);
