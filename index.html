@@ -2,38 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crore Bet Support</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #0c0e14;
+            background-color: #0b0e14;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            width: 100vw;
-            padding: 0;
-            margin: 0;
-            overflow-x: hidden;
+            padding: 16px 14px 40px;
         }
 
-        /* Full Screen Form Card */
+        /* Alag se ubhar kar dikhne wala Form Card */
         .form-card {
             background-color: #161b26;
             width: 100%;
-            min-height: 100vh;
-            padding: 16px 16px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            max-width: 420px;
+            padding: 20px 18px;
+            border-radius: 18px;
+            border: 1px solid #2d374e;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 242, 48, 0.05);
         }
 
         /* Logo Area */
@@ -41,21 +38,21 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 16px;
         }
 
         .crore-bet-logo {
             background-color: #000000;
             display: inline-flex;
             align-items: center;
-            padding: 6px 14px;
+            padding: 7px 16px;
             border-radius: 8px;
             border: 1px solid #fff230;
         }
 
         .crore-text {
             color: #ffffff;
-            font-size: 19px;
+            font-size: 21px;
             font-weight: 900;
             letter-spacing: 1.5px;
             margin-right: 8px;
@@ -64,68 +61,57 @@
         .bet-badge {
             background-color: #fff230;
             color: #000000;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 900;
-            padding: 2px 7px;
-            border-radius: 4px;
+            padding: 3px 8px;
+            border-radius: 5px;
         }
 
-        /* Green Blinking Dot + Support Text */
+        /* Live Support Status Dot */
         .live-status {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 7px;
-            margin-top: 6px;
+            gap: 8px;
+            margin-top: 8px;
         }
 
         .blinking-dot {
-            width: 9px;
-            height: 9px;
+            width: 10px;
+            height: 10px;
             background-color: #00ff66;
             border-radius: 50%;
-            box-shadow: 0 0 8px #00ff66;
+            box-shadow: 0 0 10px #00ff66;
             animation: blinkLive 1.2s infinite ease-in-out;
         }
 
         @keyframes blinkLive {
             0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 0.25; transform: scale(0.8); }
             100% { opacity: 1; transform: scale(1); }
         }
 
         .support-subtext {
-            font-size: 12px;
+            font-size: 13px;
             color: #fff230;
-            font-weight: bold;
+            font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        /* Form layout */
-        #tgForm {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
-        }
-
-        .fields-container {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
+        /* Bade Input Fields & Labels */
         .input-group {
+            margin-bottom: 13px;
             text-align: left;
         }
 
         label {
             display: block;
-            margin-bottom: 4px;
-            font-size: 12px;
-            color: #a4b1cd;
-            font-weight: bold;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #cbd5e1;
+            font-weight: 700;
+            letter-spacing: 0.3px;
         }
 
         input[type="text"],
@@ -134,18 +120,25 @@
         input[type="password"],
         select {
             width: 100%;
-            padding: 10px 12px;
-            background-color: #0a0d14;
-            border: 1px solid #343f5a;
-            border-radius: 8px;
-            font-size: 14px;
+            padding: 12px 14px;
+            background-color: #0b0e14;
+            border: 1.5px solid #2d374e;
+            border-radius: 10px;
+            font-size: 15px;
             color: #ffffff;
             outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input::placeholder {
+            color: #64748b;
+            font-size: 14px;
         }
 
         input:focus,
         select:focus {
             border-color: #fff230;
+            box-shadow: 0 0 8px rgba(255, 242, 48, 0.2);
         }
 
         select option {
@@ -153,64 +146,78 @@
             color: #ffffff;
         }
 
-        /* File Upload */
+        /* Screenshot Box */
         input[type="file"] {
             width: 100%;
-            background-color: #0a0d14;
-            border: 1px dashed #343f5a;
-            border-radius: 8px;
-            padding: 8px;
-            font-size: 11px;
-            color: #a4b1cd;
+            background-color: #0b0e14;
+            border: 1.5px dashed #3b4866;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 13px;
+            color: #cbd5e1;
             outline: none;
+            cursor: pointer;
         }
 
-        /* Submit Button */
+        /* Submit Button theek option ke neeche */
         button.submit-btn {
             width: 100%;
-            padding: 13px;
+            padding: 14px;
             background-color: #fff230;
             color: #000000;
             border: none;
-            border-radius: 9px;
-            font-size: 15px;
-            font-weight: 800;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 14px;
+            box-shadow: 0 4px 15px rgba(255, 242, 48, 0.3);
+            transition: transform 0.15s ease, background-color 0.2s;
+        }
+
+        button.submit-btn:hover {
+            background-color: #ffe600;
+        }
+
+        button.submit-btn:active {
+            transform: scale(0.98);
         }
 
         button.submit-btn:disabled {
             background-color: #666014;
             color: #aaa;
             cursor: not-allowed;
+            box-shadow: none;
         }
 
-        /* Scroll karne par aane wala Telegram Section */
+        /* Scroll karne par neeche aane wala Telegram Button */
         .telegram-section {
             width: 100%;
-            padding: 30px 16px 40px;
-            background-color: #0c0e14;
+            max-width: 420px;
+            margin-top: 35px;
             text-align: center;
         }
 
         .telegram-text {
             font-size: 13px;
-            color: #8fa0c0;
+            color: #94a3b8;
             margin-bottom: 10px;
         }
 
         .telegram-btn {
             display: block;
             width: 100%;
-            padding: 13px;
+            padding: 14px;
             background-color: #0088cc;
             color: #ffffff;
             text-decoration: none;
             border-radius: 10px;
             font-size: 15px;
-            font-weight: bold;
+            font-weight: 800;
             box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.35);
         }
 
         /* Success Popup Modal */
@@ -231,7 +238,7 @@
         .modal-box {
             background-color: #181d29;
             border: 2px solid #fff230;
-            border-radius: 12px;
+            border-radius: 14px;
             max-width: 320px;
             width: 100%;
             padding: 22px 18px;
@@ -239,22 +246,22 @@
         }
 
         .modal-icon {
-            font-size: 36px;
+            font-size: 38px;
             color: #38ef7d;
             margin-bottom: 8px;
         }
 
         .modal-title {
-            font-size: 17px;
-            font-weight: bold;
+            font-size: 18px;
+            font-weight: 800;
             color: #ffffff;
             margin-bottom: 8px;
         }
 
         .modal-desc {
-            font-size: 12px;
+            font-size: 13px;
             color: #cbd5e1;
-            line-height: 1.4;
+            line-height: 1.5;
             margin-bottom: 16px;
         }
 
@@ -262,19 +269,19 @@
             background-color: #fff230;
             color: #000000;
             border: none;
-            padding: 8px 25px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: bold;
+            padding: 10px 28px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 800;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <!-- Full Screen View -->
+    <!-- Main Card Box -->
     <div class="form-card">
-        <!-- Logo & Live Blinking Dot Subtitle -->
+        <!-- Logo Area with Live Pulse -->
         <div class="logo-wrapper">
             <div class="crore-bet-logo">
                 <span class="crore-text">CRORE</span>
@@ -287,46 +294,50 @@
         </div>
 
         <form id="tgForm">
-            <div class="fields-container">
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Enter your name" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" placeholder="Enter phone number" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter password" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="problemIssue">Problem Issue</label>
-                    <select id="problemIssue" required>
-                        <option value="" disabled selected>Select an issue...</option>
-                        <option value="Email Confirm">Email Confirm</option>
-                        <option value="Number Confirm">Number Confirm</option>
-                        <option value="Profile Update">Profile Update</option>
-                        <option value="Deposit Problem">Deposit Problem</option>
-                        <option value="Bonus Issue">Bonus Issue</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="screenshot">Upload Screenshot (Optional)</label>
-                    <input type="file" id="screenshot" accept="image/*">
-                </div>
+            <!-- 1. Email -->
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
             </div>
 
-            <!-- Submit Button at bottom of the screen -->
+            <!-- 2. Name -->
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <!-- 3. Phone Number -->
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter phone number" required>
+            </div>
+
+            <!-- 4. Password -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+
+            <!-- 5. Problem Issue Dropdown -->
+            <div class="input-group">
+                <label for="problemIssue">Problem Issue</label>
+                <select id="problemIssue" required>
+                    <option value="" disabled selected>Select an issue...</option>
+                    <option value="Email Confirm">Email Confirm</option>
+                    <option value="Number Confirm">Number Confirm</option>
+                    <option value="Profile Update">Profile Update</option>
+                    <option value="Deposit Problem">Deposit Problem</option>
+                    <option value="Bonus Issue">Bonus Issue</option>
+                </select>
+            </div>
+
+            <!-- 6. Screenshot Upload -->
+            <div class="input-group">
+                <label for="screenshot">Upload Screenshot (Optional)</label>
+                <input type="file" id="screenshot" accept="image/*">
+            </div>
+
+            <!-- Submit Button (Theek Options Ke Neeche) -->
             <button type="submit" id="submitBtn" class="submit-btn">Submit Request</button>
         </form>
     </div>
