@@ -12,9 +12,10 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
+        /* Clean White Background */
         body {
-            background-color: #0b0e14;
-            color: #ffffff;
+            background-color: #f4f6f9;
+            color: #1a1a1a;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -22,15 +23,15 @@
             padding: 16px 14px 40px;
         }
 
-        /* Alag se ubhar kar dikhne wala Form Card */
+        /* White Form Card */
         .form-card {
-            background-color: #161b26;
+            background-color: #ffffff;
             width: 100%;
             max-width: 420px;
-            padding: 20px 18px;
+            padding: 22px 18px;
             border-radius: 18px;
-            border: 1px solid #2d374e;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 242, 48, 0.05);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
         }
 
         /* Logo Area */
@@ -47,7 +48,7 @@
             align-items: center;
             padding: 7px 16px;
             border-radius: 8px;
-            border: 1px solid #fff230;
+            border: 1px solid #000000;
         }
 
         .crore-text {
@@ -67,7 +68,7 @@
             border-radius: 5px;
         }
 
-        /* Live Support Status Dot */
+        /* Live Status */
         .live-status {
             display: flex;
             align-items: center;
@@ -79,9 +80,9 @@
         .blinking-dot {
             width: 10px;
             height: 10px;
-            background-color: #00ff66;
+            background-color: #10b981;
             border-radius: 50%;
-            box-shadow: 0 0 10px #00ff66;
+            box-shadow: 0 0 8px #10b981;
             animation: blinkLive 1.2s infinite ease-in-out;
         }
 
@@ -93,13 +94,13 @@
 
         .support-subtext {
             font-size: 13px;
-            color: #fff230;
+            color: #0f172a;
             font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        /* Bade Input Fields & Labels */
+        /* Form Inputs */
         .input-group {
             margin-bottom: 13px;
             text-align: left;
@@ -109,9 +110,8 @@
             display: block;
             margin-bottom: 6px;
             font-size: 14px;
-            color: #cbd5e1;
+            color: #334155;
             font-weight: 700;
-            letter-spacing: 0.3px;
         }
 
         input[type="text"],
@@ -121,51 +121,46 @@
         select {
             width: 100%;
             padding: 12px 14px;
-            background-color: #0b0e14;
-            border: 1.5px solid #2d374e;
+            background-color: #f8fafc;
+            border: 1.5px solid #cbd5e1;
             border-radius: 10px;
             font-size: 15px;
-            color: #ffffff;
+            color: #0f172a;
             outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            transition: border-color 0.2s;
         }
 
         input::placeholder {
-            color: #64748b;
+            color: #94a3b8;
             font-size: 14px;
         }
 
         input:focus,
         select:focus {
-            border-color: #fff230;
-            box-shadow: 0 0 8px rgba(255, 242, 48, 0.2);
-        }
-
-        select option {
-            background-color: #161b26;
-            color: #ffffff;
+            border-color: #0088cc;
+            background-color: #ffffff;
         }
 
         /* Screenshot Box */
         input[type="file"] {
             width: 100%;
-            background-color: #0b0e14;
-            border: 1.5px dashed #3b4866;
+            background-color: #f8fafc;
+            border: 1.5px dashed #cbd5e1;
             border-radius: 10px;
             padding: 10px;
             font-size: 13px;
-            color: #cbd5e1;
+            color: #475569;
             outline: none;
             cursor: pointer;
         }
 
-        /* Submit Button theek option ke neeche */
+        /* Submit Button */
         button.submit-btn {
             width: 100%;
             padding: 14px;
             background-color: #fff230;
             color: #000000;
-            border: none;
+            border: 1px solid #eab308;
             border-radius: 10px;
             font-size: 16px;
             font-weight: 900;
@@ -173,12 +168,8 @@
             letter-spacing: 0.5px;
             cursor: pointer;
             margin-top: 14px;
-            box-shadow: 0 4px 15px rgba(255, 242, 48, 0.3);
-            transition: transform 0.15s ease, background-color 0.2s;
-        }
-
-        button.submit-btn:hover {
-            background-color: #ffe600;
+            box-shadow: 0 4px 12px rgba(255, 242, 48, 0.35);
+            transition: transform 0.15s ease;
         }
 
         button.submit-btn:active {
@@ -186,13 +177,14 @@
         }
 
         button.submit-btn:disabled {
-            background-color: #666014;
-            color: #aaa;
+            background-color: #e2e8f0;
+            color: #94a3b8;
+            border-color: #cbd5e1;
             cursor: not-allowed;
             box-shadow: none;
         }
 
-        /* Scroll karne par neeche aane wala Telegram Button */
+        /* Scroll karne par neeche aane wala main Telegram Button */
         .telegram-section {
             width: 100%;
             max-width: 420px;
@@ -202,7 +194,7 @@
 
         .telegram-text {
             font-size: 13px;
-            color: #94a3b8;
+            color: #64748b;
             margin-bottom: 10px;
         }
 
@@ -217,63 +209,103 @@
             font-size: 15px;
             font-weight: 800;
             box-sizing: border-box;
-            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.35);
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.25);
         }
 
-        /* Success Popup Modal */
+        /* --- POPUP MODAL STYLING --- */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.65);
             display: none;
             justify-content: center;
             align-items: center;
             z-index: 9999;
             padding: 20px;
+            backdrop-filter: blur(4px);
         }
 
         .modal-box {
-            background-color: #181d29;
-            border: 2px solid #fff230;
-            border-radius: 14px;
-            max-width: 320px;
+            background-color: #ffffff;
+            border: 2px solid #10b981;
+            border-radius: 18px;
+            max-width: 340px;
             width: 100%;
-            padding: 22px 18px;
+            padding: 24px 20px;
             text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            animation: popAnim 0.25s ease-out;
+        }
+
+        @keyframes popAnim {
+            0% { transform: scale(0.85); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         .modal-icon {
-            font-size: 38px;
-            color: #38ef7d;
-            margin-bottom: 8px;
+            font-size: 42px;
+            color: #10b981;
+            margin-bottom: 10px;
+            line-height: 1;
         }
 
         .modal-title {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 800;
-            color: #ffffff;
+            color: #0f172a;
             margin-bottom: 8px;
         }
 
         .modal-desc {
-            font-size: 13px;
-            color: #cbd5e1;
+            font-size: 13.5px;
+            color: #475569;
             line-height: 1.5;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
-        .modal-btn {
-            background-color: #fff230;
-            color: #000000;
+        .modal-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .modal-ok-btn {
+            background-color: #000000;
+            color: #ffffff;
             border: none;
-            padding: 10px 28px;
+            padding: 10px 32px;
             border-radius: 8px;
             font-size: 14px;
-            font-weight: 800;
+            font-weight: 700;
             cursor: pointer;
+            width: 100%;
+        }
+
+        /* Chhota Telegram Button Modal Ke Andar */
+        .modal-tg-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background-color: #0088cc;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 9px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .modal-tg-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: #ffffff;
         }
     </style>
 </head>
@@ -281,7 +313,7 @@
 
     <!-- Main Card Box -->
     <div class="form-card">
-        <!-- Logo Area with Live Pulse -->
+        <!-- Logo Area -->
         <div class="logo-wrapper">
             <div class="crore-bet-logo">
                 <span class="crore-text">CRORE</span>
@@ -337,24 +369,34 @@
                 <input type="file" id="screenshot" accept="image/*">
             </div>
 
-            <!-- Submit Button (Theek Options Ke Neeche) -->
+            <!-- Submit Button -->
             <button type="submit" id="submitBtn" class="submit-btn">Submit Request</button>
         </form>
     </div>
 
-    <!-- Scroll karne par Telegram Button -->
+    <!-- Scroll karne par neeche aane wala Telegram Button -->
     <div class="telegram-section">
         <p class="telegram-text">Need immediate help? Contact our direct support</p>
         <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="telegram-btn">Chat on Telegram</a>
     </div>
 
-    <!-- Success Modal Popup -->
+    <!-- Success Modal Popup With Voice & Mini TG Button -->
     <div class="modal-overlay" id="successModal">
         <div class="modal-box">
             <div class="modal-icon">✓</div>
             <h3 class="modal-title">Request Submitted!</h3>
-            <p class="modal-desc">Your request has been successfully sent to our support team. We will review and resolve your issue shortly.</p>
-            <button type="button" class="modal-btn" id="closeModalBtn">OK</button>
+            <p class="modal-desc">Aapki request support team ko bhej di gayi hai. Kripya <b>15 se 20 minute</b> ka wait karein, humari team jald hi issue solve karegi.</p>
+            
+            <div class="modal-actions">
+                <!-- Chhota Telegram Button -->
+                <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="modal-tg-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                    </svg>
+                    Contact on Telegram
+                </a>
+                <button type="button" class="modal-ok-btn" id="closeModalBtn">OK</button>
+            </div>
         </div>
     </div>
 
@@ -369,7 +411,22 @@
 
         closeModalBtn.addEventListener('click', function() {
             modal.style.display = 'none';
+            // Agar voice bol rahi ho toh modal band hone par band kar dein
+            window.speechSynthesis.cancel();
         });
+
+        // Clear Hindi Voice Function
+        function speakWaitMessage() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // purani speech stop karein
+                const message = "Aapki request support team ko bhej di gayi hai. Kripya pandrah se bees minute ka wait karein, humari support team jald hi aapki sahayata karegi.";
+                const speech = new SpeechSynthesisUtterance(message);
+                speech.lang = 'hi-IN'; // Hindi Accent
+                speech.rate = 0.95;    // Clear and natural speed
+                speech.pitch = 1.0;
+                window.speechSynthesis.speak(speech);
+            }
+        }
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -424,6 +481,7 @@
             function handleResponse(data) {
                 if (data.ok) {
                     modal.style.display = 'flex';
+                    speakWaitMessage(); // Turant clear voice mein bolega
                     form.reset();
                 } else {
                     alert("Telegram Error: Check Bot Token or Chat ID.");
