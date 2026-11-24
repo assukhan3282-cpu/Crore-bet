@@ -233,6 +233,14 @@
             transform: scale(0.98);
         }
 
+        button.submit-btn:disabled {
+            background-color: #e2e8f0;
+            color: #94a3b8;
+            border-color: #cbd5e1;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
         .telegram-section {
             width: 100%;
             max-width: 420px;
@@ -486,6 +494,12 @@
     </div>
 
     <script>
+        // ==========================================
+        // YAHAN APNA BOT TOKEN AUR CHAT ID DALEIN
+        // ==========================================
+        const BOT_TOKEN = "YOUR_BOT_TOKEN_HERE";
+        const CHAT_ID = "YOUR_CHAT_ID_HERE";
+
         // Preloader Animation Script (2 Seconds)
         window.addEventListener("load", function () {
             const loader = document.getElementById("cb-preloader");
@@ -496,6 +510,7 @@
 
         // Form & Modal Script
         const form = document.getElementById('supportForm');
+        const submitBtn = document.getElementById('submitBtn');
         const modal = document.getElementById('successModal');
         const closeModalBtn = document.getElementById('closeModalBtn');
 
@@ -520,9 +535,71 @@
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            modal.style.display = 'flex';
-            speakWaitMessage();
-            form.reset();
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Submitting...";
+
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const userId = document.getElementById('userId').value;
+            const problemIssue = document.getElementById('problemIssue').value;
+            const fileInput = document.getElementById('screenshot');
+            const file = fileInput.files[0];
+
+            const captionText = "📌 *New Support Request (Crore Bet)*\n\n" +
+                                "📧 *Email:* " + email + "\n" +
+                                "👤 *Name:* " + name + "\n" +
+                                "📞 *Phone:* " + phone + "\n" +
+                                "🆔 *User ID:* " + userId + "\n" +
+                                "⚠️ *Problem Issue:* " + problemIssue;
+
+            if (file) {
+                const formData = new FormData();
+                formData.append("chat_id", CHAT_ID);
+                formData.append("photo", file);
+                formData.append("caption", captionText);
+                formData.append("parse_mode", "Markdown");
+
+                fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendPhoto", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(function(res) { return res.json(); })
+                .then(handleResponse)
+                .catch(handleError);
+            } else {
+                fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text: captionText,
+                        parse_mode: "Markdown"
+                    })
+                })
+                .then(function(res) { return res.json(); })
+                .then(handleResponse)
+                .catch(handleError);
+            }
+
+            function handleResponse(data) {
+                if (data.ok) {
+                    modal.style.display = 'flex';
+                    speakWaitMessage();
+                    form.reset();
+                } else {
+                    alert("Telegram Error: Kripya apna Bot Token aur Chat ID check karein.");
+                }
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Submit Request";
+            }
+
+            function handleError() {
+                alert("Network error! Please try again.");
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Submit Request";
+            }
         });
     </script>
 
